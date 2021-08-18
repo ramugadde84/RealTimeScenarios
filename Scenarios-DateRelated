@@ -1,0 +1,6 @@
+Coversion of JODA localDate to SQL TimeStamp to avoid Date Deprecation issue.
+Convert JODA local Date to DateTime
+-> DateTime datetime= localDate.toDateTimeAtStartOfDay(DateTimeZone.forTimeZone(TimeZone)));
+-> GregorianCalendar gc=datetime.toGregorianCalendar()l
+-> TimeStamp ts=new TimeStamp(gc.getTimeMillis());
+ps.setTImeStamp(index,ts);
